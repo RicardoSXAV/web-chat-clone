@@ -1,11 +1,12 @@
 import React from "react";
-
 import GlobalStyles from "./styles/GlobalStyles";
+
+import Home from "./screens/Home";
 
 function App() {
   return (
     <>
-      <h1>Web Chat App</h1>
+      <Home />
 
       <GlobalStyles />
     </>

@@ -7,7 +7,18 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
+    html, body, #root {
+        height: 100%;
+    }
+
     *, button, input {
-        font-family: 'Poppins', 'sans-serif';
+        font-family: 'Poppins', sans-serif;
+
+        border: 0;
+        outline: 0;
+    }
+
+    :root {
+        --white: #FFFFFF;
     }
 `;
