@@ -4,7 +4,7 @@ export const Grid = styled.div`
   display: grid;
 
   grid-template-columns: 350px auto 300px;
-  grid-template-rows: 60px minmax(200px, 400px) 300px;
+  grid-template-rows: 60px minmax(200px, 300px) 300px;
 
   grid-template-areas:
     "user-options chat-options chat-details"

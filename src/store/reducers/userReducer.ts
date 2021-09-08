@@ -1,4 +1,4 @@
-import { users } from "../../data/Users";
+import { users } from "../../data/homeData";
 
 type User = {
   name: string;

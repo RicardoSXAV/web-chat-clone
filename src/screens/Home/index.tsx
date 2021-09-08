@@ -1,7 +1,14 @@
 import React from "react";
+import { Grid } from "./styles";
+
+import UserOptions from "./UserOptions";
 
 const Home: React.FC = () => {
-  return <h1>Hello</h1>;
+  return (
+    <Grid>
+      <UserOptions />
+    </Grid>
+  );
 };
 
 export default Home;
