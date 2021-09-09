@@ -100,7 +100,10 @@ export const chatMessages = [
     },
     messages: [
       { type: "text", content: "Hello, I don't have a clock." },
-      { type: "text", content: "Can you tell me what time it is?" },
+      {
+        type: "text",
+        content: "Can you tell me what time it is?",
+      },
     ],
   },
 ];

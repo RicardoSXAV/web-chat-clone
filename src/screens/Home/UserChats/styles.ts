@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 import { COLORS } from "../../../constants/Colors";
 
+interface UserCardProps {
+  selected: boolean;
+}
+
 export const Container = styled.div`
   grid-area: user-chats;
 
@@ -14,6 +18,15 @@ export const Container = styled.div`
   .user-chats-title {
     gap: 0.5rem;
     align-self: flex-start;
+  }
+
+  svg {
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(1.5);
+    }
   }
 `;
 
@@ -35,6 +48,11 @@ export const RowDiv = styled.div`
     font-size: 1.6rem;
     margin-left: 0.5rem;
   }
+`;
+
+export const ColumnDiv = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Circle = styled.div`
@@ -67,8 +85,51 @@ export const StyledSearchBar = styled.div`
   }
 `;
 
-export const UserCard = styled.div`
+export const Overflow = styled.div`
+  overflow-y: auto;
+  height: 100%;
+  margin-top: 1rem;
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${COLORS.lightGray};
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${COLORS.mediumGray};
+    border-radius: 4px;
+  }
+`;
+
+export const UserCard = styled.div<UserCardProps>`
   display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+
+  background-color: ${(props) => props.selected && COLORS.gray};
+  border-radius: ${(props) => props.selected && "16px"};
+
+  margin-right: 0.5rem;
+  padding: 1rem 1rem;
+  gap: 1rem;
+
+  p {
+    max-width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${(props) => !props.selected && COLORS.darkGray};
+    border-radius: 16px;
+  }
 
   img {
     width: 3rem;
@@ -76,5 +137,9 @@ export const UserCard = styled.div`
     object-fit: cover;
 
     border-radius: 50%;
+  }
+
+  svg {
+    margin-right: 0.4rem;
   }
 `;

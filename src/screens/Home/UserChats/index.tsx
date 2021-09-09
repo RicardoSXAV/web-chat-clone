@@ -1,22 +1,26 @@
 import React from "react";
 import {
   Circle,
+  ColumnDiv,
   Container,
   Input,
+  Overflow,
   RowDiv,
   StyledSearchBar,
   UserCard,
 } from "./styles";
 
-import { BiChevronDown } from "react-icons/bi";
-import { FiEdit, FiSearch } from "react-icons/fi";
+import { BiChevronDown, BiMicrophone } from "react-icons/bi";
+import { FiEdit, FiSearch, FiImage } from "react-icons/fi";
 import { TiStarOutline } from "react-icons/ti";
 
 import { COLORS } from "../../../constants/Colors";
 import { chatMessages } from "../../../data/homeData";
-import { LargeText, Text } from "../../../styles/TextStyles";
+import { LargeText, SmallText, Text } from "../../../styles/TextStyles";
 
 const UserChats: React.FC = () => {
+  const selectedUser = "Caterina";
+
   return (
     <Container>
       <RowDiv className="user-chats-title">
@@ -33,12 +37,39 @@ const UserChats: React.FC = () => {
         <Input placeholder="Search" />
       </StyledSearchBar>
 
-      {chatMessages.map((chat) => (
-        <UserCard>
-          <img src={chat.user.profileImage} alt={chat.user.name} />
-          <Text>{chat.user.name}</Text>
-        </UserCard>
-      ))}
+      <Overflow>
+        {chatMessages.map((chat) => {
+          const lastMessage = chat.messages[chat.messages.length - 1];
+
+          return (
+            <UserCard selected={chat.user.name === selectedUser}>
+              <img src={chat.user.profileImage} alt={chat.user.name} />
+              <ColumnDiv className="user-card-column">
+                <Text>{chat.user.name}</Text>
+                <RowDiv>
+                  {lastMessage.type === "text" ? (
+                    <SmallText color={COLORS.lightGray}>
+                      {lastMessage.content}
+                    </SmallText>
+                  ) : lastMessage.type === "audio" ? (
+                    <>
+                      <BiMicrophone />
+                      <SmallText color={COLORS.lightGray}>
+                        Voice Message
+                      </SmallText>
+                    </>
+                  ) : (
+                    <>
+                      <FiImage />
+                      <SmallText color={COLORS.lightGray}>Image</SmallText>
+                    </>
+                  )}
+                </RowDiv>
+              </ColumnDiv>
+            </UserCard>
+          );
+        })}
+      </Overflow>
     </Container>
   );
 };
