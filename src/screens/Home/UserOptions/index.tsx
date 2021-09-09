@@ -9,8 +9,6 @@ import {
   ProfileImage,
   RowContainer,
   RowDiv,
-  SmallText,
-  Text,
   VerticalLine,
   WorkspaceCard,
   WorkspaceSelect,
@@ -19,8 +17,10 @@ import { BiChevronDown } from "react-icons/bi";
 import { BsBellFill, BsCheck } from "react-icons/bs";
 import { ImBubbles } from "react-icons/im";
 import { HiPlus } from "react-icons/hi";
-import { users } from "../../../data/homeData";
+
 import { COLORS } from "../../../constants/Colors";
+import { users } from "../../../data/homeData";
+import { SmallText, Text } from "../../../styles/TextStyles";
 
 const UserOptions: React.FC = () => {
   return (

@@ -9,6 +9,7 @@ export const Container = styled.div`
   align-items: center;
 
   padding: 1rem 2rem;
+  height: fit-content;
 `;
 
 export const RowContainer = styled.div`
@@ -73,15 +74,6 @@ export const InputSelect = styled.div`
   height: fit-content;
 
   gap: 0.5rem;
-`;
-
-export const Text = styled.p`
-  color: ${COLORS.white};
-`;
-
-export const SmallText = styled.p`
-  color: ${(props) => props.color || COLORS.white};
-  font-size: 0.8rem;
 `;
 
 export const Circle = styled.div`
