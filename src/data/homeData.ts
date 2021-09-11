@@ -107,3 +107,10 @@ export const chatMessages = [
     ],
   },
 ];
+
+export const selectedUser = {
+  name: "Caterina",
+  profileImage:
+    "https://images.unsplash.com/photo-1539698103494-a76dd0436fbc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzd8fHBlcnNvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+  online: true,
+};

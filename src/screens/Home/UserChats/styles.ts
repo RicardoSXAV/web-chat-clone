@@ -4,6 +4,7 @@ import { COLORS } from "../../../constants/Colors";
 
 interface UserCardProps {
   selected: boolean;
+  online: boolean;
 }
 
 export const Container = styled.div`

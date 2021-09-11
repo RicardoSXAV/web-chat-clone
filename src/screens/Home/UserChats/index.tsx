@@ -42,7 +42,10 @@ const UserChats: React.FC = () => {
           const lastMessage = chat.messages[chat.messages.length - 1];
 
           return (
-            <UserCard selected={chat.user.name === selectedUser}>
+            <UserCard
+              selected={chat.user.name === selectedUser}
+              online={chat.user.online}
+            >
               <img src={chat.user.profileImage} alt={chat.user.name} />
               <ColumnDiv className="user-card-column">
                 <Text>{chat.user.name}</Text>
