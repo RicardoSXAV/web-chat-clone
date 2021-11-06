@@ -5,6 +5,7 @@ import UserOptions from "./UserOptions";
 import UserChats from "./UserChats";
 import ChatOptions from "./ChatOptions";
 import ChatMain from "./ChatMain";
+import ChatDetails from "./ChatDetails";
 
 const Home: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const Home: React.FC = () => {
       <UserChats />
       <ChatOptions />
       <ChatMain />
+      <ChatDetails />
     </Grid>
   );
 };

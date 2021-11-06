@@ -28,7 +28,7 @@ const UserOptions: React.FC = () => {
       <RowContainer>
         <ProfileImage>
           <VerticalLine />
-          <img src={users[0].profileImage} alt="Profile Image" />
+          <img src={users[0].profileImage} alt="Avatar" />
         </ProfileImage>
 
         <InputSelect>

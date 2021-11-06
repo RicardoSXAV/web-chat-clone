@@ -64,8 +64,9 @@ export const chatMessages = [
       },
       {
         type: "image",
-        content:
+        content: [
           "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        ],
       },
     ],
   },

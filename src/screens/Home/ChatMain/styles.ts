@@ -1,5 +1,15 @@
+import { ReactNode } from "react";
+
 import styled from "styled-components";
 import { COLORS } from "../../../constants/Colors";
+
+type MessageBubbleProps = {
+  children: ReactNode;
+};
+
+type VerticalBarProps = {
+  height: number;
+};
 
 export const Container = styled.div`
   grid-area: chat-main;
@@ -8,7 +18,83 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const Overflow = styled.div``;
+export const Overflow = styled.div`
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  font-size: 0.8rem;
+  gap: 0.5rem;
+  height: 100%;
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${COLORS.lightGray};
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${COLORS.mediumGray};
+    border-radius: 4px;
+  }
+`;
+
+export const MessageBubble = styled.div<MessageBubbleProps>`
+  width: fit-content;
+  padding: 1rem;
+
+  background-color: ${COLORS.darkGray};
+  border-radius: 10rem;
+`;
+
+export const ImageViewer = styled.div`
+  display: flex;
+  gap: 0.5rem;
+
+  img {
+    width: auto;
+    height: 15rem;
+
+    border-radius: 1rem;
+  }
+`;
+
+export const AudioMessage = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: fit-content;
+  padding: 1rem;
+
+  background-color: ${COLORS.darkGray};
+  border-radius: 10rem;
+
+  svg {
+    margin-right: 1rem;
+  }
+`;
+
+export const Circle = styled.div`
+  display: flex;
+  background-color: ${COLORS.red};
+  border-radius: 50%;
+
+  width: 0.3rem;
+  height: 0.3rem;
+  margin: 0 0.3rem;
+`;
+
+export const VerticalBar = styled.div<VerticalBarProps>`
+  height: ${(props) => props.height}rem;
+  width: 0.2rem;
+  margin: 0 0.1rem;
+
+  background-color: ${COLORS.yellow};
+  border-radius: 50rem;
+`;
 
 export const MessageInput = styled.div`
   position: relative;
@@ -16,6 +102,7 @@ export const MessageInput = styled.div`
   align-items: center;
 
   width: 100%;
+  margin-bottom: 2rem;
 `;
 
 export const TextInput = styled.input`
@@ -43,7 +130,8 @@ export const IconsContainer = styled.div`
   display: flex;
   gap: 0.5rem;
 
-  margin: 83%;
+  left: 94%;
+  transform: translateX(-86%);
 
   &:hover {
     cursor: pointer;
