@@ -22,16 +22,5 @@ export default createGlobalStyle`
         outline: 0;
     }
 
- /*    :root {
-        --background-black: #161819;
-        --white: #FFFFFF;
-        --gray: #323337;
-        --light-gray: #848688;
-        --dark-gray: #242627;
-        --blue: #43A1FE;
-        --red: #FE764B;
-        --green: #70CD99;
-        --purple: #725DFF;
-        --yellow: #E9D570;
-    } */
+
 `;

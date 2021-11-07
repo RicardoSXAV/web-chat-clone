@@ -18,8 +18,19 @@ import { COLORS } from "../../../constants/Colors";
 import { chatMessages } from "../../../data/homeData";
 import { LargeText, SmallText, Text } from "../../../styles/TextStyles";
 
-const UserChats: React.FC = () => {
-  const selectedUser = "Caterina";
+type UserChatsProps = {
+  selectedUser: string;
+  setSelectedUser: Function;
+};
+
+const UserChats: React.FC<UserChatsProps> = ({
+  selectedUser,
+  setSelectedUser,
+}) => {
+  function changeUser(event: React.MouseEvent) {
+    // @ts-ignore
+    console.log(event);
+  }
 
   return (
     <Container>
@@ -44,7 +55,7 @@ const UserChats: React.FC = () => {
           return (
             <UserCard
               selected={chat.user.name === selectedUser}
-              online={chat.user.online}
+              onClick={() => setSelectedUser(chat.user.name)}
             >
               <img src={chat.user.profileImage} alt={chat.user.name} />
               <ColumnDiv className="user-card-column">

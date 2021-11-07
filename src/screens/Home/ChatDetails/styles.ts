@@ -64,6 +64,12 @@ export const Flex = styled.div`
   align-items: center;
 `;
 
+export const MediaFlex = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+`;
+
 export const UserPicture = styled.img`
   width: 2rem;
   height: 2rem;
@@ -74,4 +80,30 @@ export const UserPicture = styled.img`
 export const CreatorTag = styled.p`
   font-size: 0.6rem;
   color: ${COLORS.yellow};
+`;
+
+export const PreviewImage = styled.img`
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+
+  border-radius: 0.5rem;
+`;
+
+export const TotalImages = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3rem;
+  height: 3rem;
+
+  font-size: 0.7rem;
+  background-color: ${COLORS.darkGray};
+  border-radius: 0.5rem;
+`;
+
+export const TaskLine = styled.div`
+  display: flex;
+  gap: 0.6rem;
 `;

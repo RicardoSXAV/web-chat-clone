@@ -115,3 +115,26 @@ export const selectedUser = {
     "https://images.unsplash.com/photo-1539698103494-a76dd0436fbc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzd8fHBlcnNvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
   online: true,
 };
+
+export const tasks = [
+  {
+    name: "Design System",
+    checked: true,
+    starred: false,
+  },
+  {
+    name: "Dark Mode",
+    checked: false,
+    starred: true,
+  },
+  {
+    name: "Create new feature",
+    checked: false,
+    starred: false,
+  },
+  {
+    name: "Implement new code",
+    checked: true,
+    starred: true,
+  },
+];

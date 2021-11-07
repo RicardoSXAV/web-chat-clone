@@ -1,17 +1,30 @@
 import React from "react";
 
-import { IoChatbubbleOutline, IoClose } from "react-icons/io5";
+import {
+  IoChatbubbleOutline,
+  IoClose,
+  IoCheckbox,
+  IoStopOutline,
+  IoSquareOutline,
+} from "react-icons/io5";
 import { CgMenuGridO } from "react-icons/cg";
+import { BsSquare } from "react-icons/bs";
 import {
   CircularButton,
   Container,
   CreatorTag,
   Flex,
+  MediaFlex,
+  PreviewImage,
+  TaskLine,
+  TotalImages,
   UserPicture,
 } from "./styles";
 import { SmallText, Text } from "../../../styles/TextStyles";
 
 import { COLORS } from "../../../constants/Colors";
+import { tasks } from "../../../data/homeData";
+import { HiOutlineStar } from "react-icons/hi";
 
 const members = [
   {
@@ -67,9 +80,31 @@ const ChatDetails: React.FC = () => {
         Media
       </SmallText>
 
+      <MediaFlex>
+        <PreviewImage src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZG9nc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+        <PreviewImage src="https://images.unsplash.com/photo-1551717743-49959800b1f6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGRvZ3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+        <PreviewImage src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGRvZ3N8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+        <TotalImages>+ 1354</TotalImages>
+      </MediaFlex>
+
       <SmallText className="chat-details-subtitle" color={COLORS.mediumGray}>
         Tasks
       </SmallText>
+      {tasks.map((task) => (
+        <TaskLine>
+          {task.checked ? (
+            <IoCheckbox color={COLORS.blue} className="check-box" />
+          ) : (
+            <IoSquareOutline color={COLORS.lightGray} />
+          )}
+          {task.starred ? (
+            <HiOutlineStar color={COLORS.yellow} />
+          ) : (
+            <HiOutlineStar color={COLORS.lightGray} />
+          )}
+          <SmallText>{task.name}</SmallText>
+        </TaskLine>
+      ))}
     </Container>
   );
 };

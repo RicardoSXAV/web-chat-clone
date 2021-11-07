@@ -22,12 +22,16 @@ import { IoPaperPlane } from "react-icons/io5";
 
 import { chatMessages, users } from "../../../data/homeData";
 
-const ChatMain: React.FC = () => {
+type ChatMainProps = {
+  selectedUser: string;
+};
+
+const ChatMain: React.FC<ChatMainProps> = ({ selectedUser }) => {
   return (
     <Container>
       <Overflow>
         {chatMessages
-          .find((chat) => chat.user.name === "Misha Landry")
+          .find((chat) => chat.user.name === selectedUser)
           ?.messages.map((message) => {
             if (message.type === "image") {
               return (

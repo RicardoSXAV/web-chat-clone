@@ -7,13 +7,21 @@ import ChatOptions from "./ChatOptions";
 import ChatMain from "./ChatMain";
 import ChatDetails from "./ChatDetails";
 
-const Home: React.FC = () => {
+type HomeProps = {
+  selectedUser: string;
+  setSelectedUser: Function;
+};
+
+const Home: React.FC<HomeProps> = ({ selectedUser, setSelectedUser }) => {
   return (
     <Grid>
       <UserOptions />
-      <UserChats />
-      <ChatOptions />
-      <ChatMain />
+      <UserChats
+        selectedUser={selectedUser}
+        setSelectedUser={setSelectedUser}
+      />
+      <ChatOptions selectedUser={selectedUser} />
+      <ChatMain selectedUser={selectedUser} />
       <ChatDetails />
     </Grid>
   );

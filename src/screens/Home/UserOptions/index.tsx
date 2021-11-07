@@ -19,7 +19,7 @@ import { ImBubbles } from "react-icons/im";
 import { HiPlus } from "react-icons/hi";
 
 import { COLORS } from "../../../constants/Colors";
-import { users } from "../../../data/homeData";
+import { chatMessages, users } from "../../../data/homeData";
 import { SmallText, Text } from "../../../styles/TextStyles";
 
 const UserOptions: React.FC = () => {

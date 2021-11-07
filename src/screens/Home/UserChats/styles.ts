@@ -1,10 +1,11 @@
+import React from "react";
 import styled from "styled-components";
 
 import { COLORS } from "../../../constants/Colors";
 
 interface UserCardProps {
   selected: boolean;
-  online: boolean;
+  onClick: Function;
 }
 
 export const Container = styled.div`
